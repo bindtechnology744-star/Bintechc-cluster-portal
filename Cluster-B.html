@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cluster B | Student Information</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+    color: #292d78;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #a90012, #d71920, #85000b);
+    color: white;
+    padding: 20px 6%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    border: 3px solid #f7d95b;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b5121b;
+    font-weight: bold;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    font-size: 14px;
+    color: #fff0f0;
+}
+
+nav {
+    background: #20212b;
+    padding: 12px 4%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #b5121b;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #ffffff, #fff0f0);
+    border-bottom: 5px solid #f7d95b;
+}
+
+.hero h2 {
+    color: #b5121b;
+    font-size: clamp(29px, 5vw, 43px);
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #555;
+    font-size: 17px;
+}
+
+.batch-badge {
+    display: inline-block;
+    background: #f7d95b;
+    color: #292d78;
+    padding: 9px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 45px 6%;
+    scroll-margin-top: 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: #b5121b;
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.section-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 28px;
+}
+
+.about-box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    border-left: 5px solid #f7d95b;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px #0000000d;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 5px solid #b5121b;
+    box-shadow: 0 5px 15px #00000010;
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+}
+
+.course-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.course-card h3 {
+    color: #b5121b;
+    margin-bottom: 8px;
+}
+
+.course-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.course-heading {
+    color: #b5121b;
+    text-align: center;
+    margin: 32px 0 18px;
+    font-size: 22px;
+    padding-bottom: 7px;
+    border-bottom: 3px solid #f7d95b;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.student-card {
+    background: white;
+    padding: 18px 8px;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 4px solid #f7d95b;
+    box-shadow: 0 4px 12px #0000000d;
+}
+
+.student-card h4 {
+    color: #292d78;
+    font-size: 14px;
+}
+
+.student-number {
+    color: #b5121b;
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.total-label {
+    color: #666;
+    font-size: 12px;
+}
+
+.section-count {
+    color: #555;
+    font-size: 12px;
+}
+
+.course-total {
+    text-align: center;
+    background: white;
+    border-left: 4px solid #f7d95b;
+    border-radius: 6px;
+    padding: 14px;
+    margin: 18px auto 30px;
+    max-width: 650px;
+    color: #292d78;
+    box-shadow: 0 3px 10px #0000000d;
+}
+
+.course-total strong {
+    color: #b5121b;
+}
+
+.cluster-summary {
+    margin: 35px auto 0;
+    max-width: 650px;
+    background: linear-gradient(135deg, #a90012, #d71920);
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    border-radius: 14px;
+    border-bottom: 5px solid #f7d95b;
+}
+
+.cluster-summary h3 {
+    font-size: 22px;
+}
+
+.summary-number {
+    color: #f7d95b;
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.cluster-summary p {
+    margin-bottom: 10px;
+}
+
+.summary-line {
+    height: 1px;
+    background: #ffffff55;
+    max-width: 250px;
+    margin: 15px auto;
+}
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+    max-width: 1050px;
+    margin: 0 auto 25px;
+}
+
+.instructor-card {
+    background: white;
+    border: 1px solid #eee;
+    border-top: 5px solid #b5121b;
+    border-radius: 10px;
+    padding: 25px 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px #0000000d;
+}
+
+.instructor-avatar {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #fff0f0;
+    border: 2px solid #f7d95b;
+    color: #b5121b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.instructor-card h4 {
+    color: #292d78;
+    font-size: 15px;
+}
+
+.instructor-card p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+footer {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #a90012, #d71920, #85000b);
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    padding: 30px 15px;
+}
+
+.footer-content h2 {
+    letter-spacing: 3px;
+}
+
+.footer-line {
+    width: 90px;
+    height: 4px;
+    background: #f7d95b;
+    border-radius: 5px;
+    margin: 17px auto;
+}
+
+.footer-batch {
+    color: #f7d95b;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 12px 0;
+}
+
+.footer-bottom {
+    background: #20212b;
+    padding: 15px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 21px;
+    }
+
+    .student-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    section {
+        padding: 32px 5%;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .batch-badge {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-content">
+        <div class="logo">CC</div>
+        <div class="header-text">
+            <h1>CLUSTER B</h1>
+            <p>Electrical • Electronics • Aircon Refrigerator</p>
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="main.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#students">Student Information</a>
+    <a href="#instructors">Instructors</a>
+</nav>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <h2>Welcome to Cluster B</h2>
+    <p>Technology, Skills and Innovation</p>
+    <div class="batch-badge">BATCH 2026–2027</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Cluster B</h2>
+    <p class="section-description">Learn more about our cluster</p>
+
+    <div class="about-box">
+        <p>
+            Cluster B features three technical courses:
+            Electrical Technology, Electronics Technology, and
+            Aircon Refrigerator Technology. This website presents course
+            information, student totals by year level, and faculty
+            information in one convenient place.
+        </p>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+    <h2 class="section-title">Our Courses</h2>
+    <p class="section-description">
+        Explore the courses offered under Cluster B.
+    </p>
+
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-icon">🔧</div>
+            <h3>Electrical Technology</h3>
+            <p>Electrical install, maintain, and repair electrical equipment and systems.</p>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">🛠️</div>
+            <h3>Electronics Technology</h3>
+            <p>Electronics nstall, maintain, and repair electrical equipment and systems.</p>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">⚙️</div>
+            <h3>Aircon Refrigerator Technology</h3>
+            <p>Aircon Refrigerator nstall, maintain, and repair electrical equipment and systems.</p>
+        </div>
+    </div>
+</section>
+
+<!-- STUDENT INFORMATION -->
+<section id="students">
+    <h2 class="section-title">Student Information</h2>
+    <p class="section-description">
+        Student totals by year level and faculty members.
+    </p>
+
+    <!-- ELC -->
+    <h3 class="course-heading">Electrical Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">53</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">51</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">16</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">21</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>141</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>4</strong>
+    </p>
+
+    <!-- ELX -->
+    <h3 class="course-heading">Electronics Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">55</div>
+            <p class="total-label">Total Students</p>
+            <p class="section-count">Section 1: 25</p>
+            <p class="section-count">Section 2: 30</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">29</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">22</div>
+            <p class="total-label">Total Students</p>
+        </div> 
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">20</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>126</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>2</strong>
+    </p>
+
+    <!-- HVAC -->
+    <h3 class="course-heading">Aircon Refrigerator Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">51</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">24</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">13</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">16</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>104</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>1</strong>
+    </p>
+
+    <!-- OVERALL SUMMARY -->
+    <div class="cluster-summary">
+        <h3>Cluster B Overall Summary</h3>
+
+        <div class="summary-number">371</div>
+        <p>Total Students</p>
+
+        <div class="summary-line"></div>
+
+        <div class="summary-number">7</div>
+        <p>Total Faculty Members</p>
+    </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors">
+    <h2 class="section-title">Our Instructors</h2>
+    <p class="section-description">
+        Instructor names and photos can be updated here.
+    </p>
+
+    <h3 class="course-heading">Electrical Technology</h3>
+    <div class="instructor-grid">
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Philip Mendoza</h4>
+            <p>Electrical Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Kyle Galapon </h4>
+            <p>Electrical Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Dominador Banana</h4>
+            <p>Electrical Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Julius Sampling</h4>
+            <p>Electrical Technology</p>
+        </div>
+      </div>
+
+    <h3 class="course-heading">Electronics Technology</h3>
+    <div class="instructor-grid">
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Diana Perez</h4>
+      </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Greg Asis</h4>
+            <p>Electronics Technology</p>
+        </div>
+    </div>
+
+    <h3 class="course-heading">Aircon Refrigerator Technology</h3>
+    <div class="instructor-grid">
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Hilario Esteban</h4>
+            <p>Aircon Refrigerator Technology</p>
+        </div>
+      </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <h2>CLUSTER B </h2>
+        <p>Electrical • Electronics • Aircon Refrigerator</p>
+
+        <div class="footer-line"></div>
+
+        <p class="footer-batch">BATCH 2026–2027</p>
+        <p>Skills • Innovation • Excellence</p>
+    </div>
+
+    <div class="footer-bottom">
+        <p>BSIT 3A - CPT</p>
+        <p>© 2026–2027 Cluster B. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
