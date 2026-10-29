@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cluster C | Student Information</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+    color: #292d78;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #a90012, #d71920, #85000b);
+    color: white;
+    padding: 20px 6%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    border: 3px solid #f7d95b;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b5121b;
+    font-weight: bold;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    font-size: 14px;
+    color: #fff0f0;
+}
+
+nav {
+    background: #20212b;
+    padding: 12px 4%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #b5121b;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #ffffff, #fff0f0);
+    border-bottom: 5px solid #f7d95b;
+}
+
+.hero h2 {
+    color: #b5121b;
+    font-size: clamp(29px, 5vw, 43px);
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #555;
+    font-size: 17px;
+}
+
+.batch-badge {
+    display: inline-block;
+    background: #f7d95b;
+    color: #292d78;
+    padding: 9px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 45px 6%;
+    scroll-margin-top: 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: #b5121b;
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.section-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 28px;
+}
+
+.about-box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    border-left: 5px solid #f7d95b;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px #0000000d;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 12px;
+    border-top: 5px solid #b5121b;
+    box-shadow: 0 5px 15px #00000010;
+    }
+
+.course-card:hover {
+    transform: translateY(-4px);
+}
+
+.course-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.course-card h3 {
+    color: #b5121b;
+    margin-bottom: 8px;
+}
+
+.course-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.course-heading {
+    color: #b5121b;
+    text-align: center;
+    margin: 32px 0 18px;
+    font-size: 22px;
+    padding-bottom: 7px;
+    border-bottom: 3px solid #f7d95b;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.courses {
+    max-width: 1250px;
+    margin: auto;
+    padding: 50px 5%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #a90018;
+    margin: 8px 0;
+}
+
+.section-title p {
+    color: #a90018;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.section-title span {
+    color: #666;
+}
+
+.course-section {
+    margin-bottom: 45px;
+}
+
+.course-heading {
+    border-left: 6px solid #b00020;
+    background: white;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 5px;
+}
+
+.course-heading h3 {
+    color: #a90018;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.course-heading p {
+    color: #555;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gallery figure {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px #00000015;
+    transition: transform 0.2s;
+}
+
+.gallery figure:hover {
+    transform: translateY(-4px);
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.gallery figcaption {
+    padding: 12px;
+    font-weight: bold;
+    border-bottom: 3px solid #b00020;
+}
+
+@media (max-width: 700px) {
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .gallery img {
+        height: 150px;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 380px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 220px;
+    }
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.student-card {
+    background: white;
+    padding: 18px 8px;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 4px solid #f7d95b;
+    box-shadow: 0 4px 12px #0000000d;
+}
+
+.student-card h4 {
+    color: #292d78;
+    font-size: 14px;
+}
+
+.student-number {
+    color: #b5121b;
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.total-label {
+    color: #666;
+    font-size: 12px;
+}
+
+.section-count {
+    color: #555;
+    font-size: 12px;
+}
+
+.course-total {
+    text-align: center;
+    background: white;
+    border-left: 4px solid #f7d95b;
+    border-radius: 6px;
+    padding: 14px;
+    margin: 18px auto 30px;
+    max-width: 650px;
+    color: #292d78;
+    box-shadow: 0 3px 10px #0000000d;
+}
+
+.course-total strong {
+    color: #b5121b;
+}
+
+.cluster-summary {
+    margin: 35px auto 0;
+    max-width: 650px;
+    background: linear-gradient(135deg, #a90012, #d71920);
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    border-radius: 14px;
+    border-bottom: 5px solid #f7d95b;
+}
+
+.cluster-summary h3 {
+    font-size: 22px;
+}
+
+.summary-number {
+    color: #f7d95b;
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.cluster-summary p {
+    margin-bottom: 10px;
+}
+
+.summary-line {
+    height: 1px;
+    background: #ffffff55;
+    max-width: 250px;
+    margin: 15px auto;
+}
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+    max-width: 1050px;
+    margin: 0 auto 25px;
+}
+
+.instructor-card {
+    background: white;
+    border: 1px solid #eee;
+    border-top: 5px solid #b5121b;
+    border-radius: 10px;
+    padding: 25px 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px #0000000d;
+}
+
+.instructor-avatar {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #fff0f0;
+    border: 2px solid #f7d95b;
+    color: #b5121b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.instructor-card h4 {
+    color: #292d78;
+    font-size: 15px;
+}
+
+.instructor-card p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+footer {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #a90012, #d71920, #85000b);
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    padding: 30px 15px;
+}
+
+.footer-content h2 {
+    letter-spacing: 3px;
+}
+
+.footer-line {
+    width: 90px;
+    height: 4px;
+    background: #f7d95b;
+    border-radius: 5px;
+    margin: 17px auto;
+}
+
+.footer-batch {
+    color: #f7d95b;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 12px 0;
+}
+
+.footer-bottom {
+    background: #20212b;
+    padding: 15px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 21px;
+    }
+
+    .student-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    section {
+        padding: 32px 5%;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .batch-badge {
+        font-size: 13px;
+    }
+}
+.people-section {
+    padding: 65px 7%;
+    background: #ffffff;
+}
+
+.alumni-section {
+    background: #fff5f5;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: #c62828;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    color: #a71919;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.section-heading > p:last-child {
+    color: #666;
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.person-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    border-bottom: 4px solid #c62828;
+    transition: transform 0.25s ease;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+}
+
+.person-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    background: #eeeeee;
+}
+
+.person-info {
+    padding: 18px;
+    text-align: center;
+}
+
+.person-info h3 {
+    color: #a71919;
+    font-size: 17px;
+    margin: 5px 0 10px;
+}
+
+.person-info p {
+    color: #555555;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+@media (max-width: 800px) {
+    .people-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .people-section {
+        padding: 45px 5%;
+    }
+
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-content">
+        <div class="logo"><img src="image/nvsu-logo.jpg" width="80" alt="NVSU Logo"></div>
+        <div class="header-text">
+            <h1>NUEVA VIZCAYA STATE UNIVERSITY</h1>
+            <p>BAMBANG CAMPUS</p>
+            <p>COLLEGE OF INDUSTRIAL TECHNOLOGY</p>
+            <p>BINDTECH-CLUSTER C</p>
+
+
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#students">Student Information</a>
+    <a href="#instructors">Instructors</a>
+</nav>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <h2>Welcome to Cluster C</h2>
+    <p>
+Cluster C brings together three technical-vocational programs: Automotive Technology, Welding Technology, and Mechanical Technology. These programs focus on developing students' technical knowledge, practical skills, and readiness for future employment.
+Through classroom instruction, hands-on training, and the guidance of instructors, the department aims to prepare students for opportunities in technical and industrial fields.</p>
+    <div class="batch-badge">BATCH 2026–2027</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Cluster C</h2>
+    <p class="section-description">Learn more about our cluster</p>
+
+    <div class="about-box">
+        <p>
+            Cluster C features three technical courses:
+            Automotive Technology, Welding Technology, and
+            Mechanical Technology. This website presents course
+            information, student totals by year level, and faculty
+            information in one convenient place.
+        </p>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+    <h2 class="section-title">Our Courses</h2>
+    <p class="section-description">
+        Explore the courses offered under Cluster C.
+    </p>
+
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-icon">🔧</div>
+            <h3>Automotive Technology</h3>
+            <p>Automotive servicing and vehicle technology.</p>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">🛠️</div>
+            <h3>Welding Technology</h3>
+            <p>Welding processes and fabrication skills.</p>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">⚙️</div>
+            <h3>Mechanical Technology</h3>
+            <p>Mechanical systems and technical skills.</p>
+        </div>
+    </div>
+</section>
+ <!-- AUTOMOTIVE -->
+    <div class="course-section">
+        <div class="course-heading">
+            <h3>01. AUTOMOTIVE</h3>
+            <p>Vehicle servicing, repair, inspection, and maintenance.</p>
+        </div>
+
+        <div class="gallery">
+            <figure>
+                <img src="image/CA1.jpg" alt="Automotive engine repair">
+        
+            </figure>
+            <figure>
+                <img src="image/CA2.jpg" alt="Vehicle diagnostics">
+                           </figure>
+            <figure>
+                <img src="image/CA3.jpg" alt="Tire servicing">
+                            </figure>
+            <figure>
+                <img src="image/CA4.jpg" alt="Automotive tools">
+                            </figure>
+            <figure>
+                <img src="image/CA5.jpg" alt="Automotive workshop">
+                            </figure>
+            <figure>
+                <img src="image/CA6.jpg" alt="Automotive students">
+                           </figure>
+        </div>
+    </div>
+
+    <!-- WELDING -->
+    <div class="course-section">
+        <div class="course-heading">
+            <h3>02. WELDING</h3>
+            <p>Welding processes, metal fabrication, and workshop safety.</p>
+        </div>
+
+        <div class="gallery">
+            <figure>
+                <img src="image/CW1.jpg" alt="Arc welding">
+                
+            </figure>
+<figure>
+                <img src="image/CW2.jpg" alt="Arc welding">
+                            </figure>
+
+                    </div>
+    </div>
+
+    <!-- MECHANICAL -->
+    <div class="course-section">
+        <div class="course-heading">
+            <h3>03. MECHANICAL</h3>
+            <p>Machine operations, mechanical tools, and equipment maintenance.</p>
+        </div>
+
+        <div class="gallery">
+            <figure>
+                <img src="image/CM1.jpg" alt="Mechanical machines">
+                            </figure>
+            <figure>
+                <img src="image/CM2.jpg" alt="Mechanical measuring tools">
+                            </figure>
+            <figure>
+                <img src="image/CM3.jpg" alt="Machine assembly">
+                            </figure>
+            <figure>
+                <img src="image/CM4.jpg" alt="Equipment maintenance">
+                            </figure>
+            <figure>
+                <img src="image/CM5.jpg" alt="Mechanical workshop">
+                
+            </figure>
+            <figure>
+                <img src="image/CM6.jpg" alt="Mechanical student training">
+                           </figure>
+        </div>
+    </div>
+</section>
+
+<!-- STUDENT INFORMATION -->
+<section id="students">
+    <h2 class="section-title">Student Information</h2>
+    <p class="section-description">
+        Student totals by year level and faculty members.
+    </p>
+
+    <!-- MECHANICAL -->
+    <h3 class="course-heading">Mechanical Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">47</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">47</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">42</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">21</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>157</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>3</strong>
+    </p>
+
+    <!-- AUTOMOTIVE -->
+    <h3 class="course-heading">Automotive Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">108</div>
+            <p class="total-label">Total Students</p>
+            <p class="section-count">Section 1: 55</p>
+            <p class="section-count">Section 2: 53</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">33</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">59</div>
+            <p class="total-label">Total Students</p>
+            <p class="section-count">Section 1: 18</p>
+            <p class="section-count">Section 2: 41</p>
+        </div>
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">53</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>253</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>5</strong>
+    </p>
+
+    <!-- WELDING -->
+    <h3 class="course-heading">Welding Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">72</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">41</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">24</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">16</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>153</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>2</strong>
+    </p>
+
+    <!-- OVERALL SUMMARY -->
+    <div class="cluster-summary">
+        <h3>Cluster C Overall Summary</h3>
+
+        <div class="summary-number">563</div>
+        <p>Total Students</p>
+
+        <div class="summary-line"></div>
+
+        <div class="summary-number">10</div>
+        <p>Total Faculty Members</p>
+    </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors">
+    <h2 class="section-title">Our Instructors</h2>
+    <p class="section-description">
+        Instructor names and photos can be updated here.
+    </p>
+
+    <h3 class="course-heading">Automotive Technology</h3>
+    <div class="instructor-grid">
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Rogelio R. Abalos JR.</h4>
+            <p>Automotive Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Alexander C. Pagatpatan </h4>
+            <p>Automotive Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Joel C. Toon</h4>
+            <p>Automotive Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Tony O. Basatan</h4>
+            <p>Automotive Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Gavelias Velasco</h4>
+            <p>Automotive Technology</p>
+        </div>
+    </div>
+
+    <h3 class="course-heading">Welding Technology</h3>
+    <div class="instructor-grid">
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Jaymark D. Aliaga</h4>
+            <p>Welding Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Alexzander C. Pagatpatan JR.</h4>
+            <p>Welding Technology</p>
+        </div>
+    </div>
+
+    <h3 class="course-heading">Mechanical Technology</h3>
+    <div class="instructor-grid">
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Joel C. Toon</h4>
+            <p>Mechanical Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Willy Duldulao</h4>
+            <p>Mechanical Technology</p>
+        </div>
+        <div class="instructor-card">
+            <div class="instructor-avatar">👤</div>
+            <h4>Frankie M. Ramos</h4>
+            <p>Mechanical Technology</p>
+        </div>
+    </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cluster C | Alumni and Future Careers</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #a80000;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+            border-bottom: 5px solid #e5b323;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        nav {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav a {
+            color: #a80000;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 12px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #e5b323;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 30px 15px 15px;
+        }
+
+        .intro h2 {
+            color: #a80000;
+            font-size: 27px;
+        }
+
+        .intro p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .course {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-left: 6px solid #a80000;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px #00000012;
+        }
+
+        .course h2 {
+            color: #a80000;
+            margin-bottom: 10px;
+        }
+
+        .course h3 {
+            margin: 15px 0 5px;
+            color: #444;
+        }
+
+        .course ul {
+            padding-left: 25px;
+        }
+
+        .career-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .career {
+            background: #fff4f4;
+            border: 1px solid #f0cccc;
+            padding: 12px;
+            border-radius: 5px;
+        }
+
+        .career strong {
+            color: #a80000;
+        }
+
+        .alumni-section {
+            background: white;
+            margin-top: 35px;
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px #00000012;
+        }
+
+        .alumni-section h2 {
+            color: #a80000;
+            margin-bottom: 12px;
+        }
+
+        .note {
+            background: #fff8df;
+            padding: 15px;
+            margin-top: 15px;
+            border-left: 4px solid #e5b323;
+        }
+
+        footer {
+            background: #252525;
+            color: white;
+            text-align: center;
+            padding: 22px 10px;
+            margin-top: 35px;
+        }
+
+        footer strong {
+            color: #ffdf70;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            .course {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>BINDTECH - CLUSTER C</h1>
+    <p>Automotive Technology | Welding Technology | Mechanical Technology</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#automotive">Automotive</a>
+    <a href="#welding">Welding</a>
+    <a href="#mechanical">Mechanical</a>
+    <a href="#alumni">Alumni</a>
+</nav>
+
+<section class="intro">
+    <h2>ALUMNI & FUTURE CAREERS</h2>
+    <p>Building Skills, Creating Opportunities, and Shaping Successful Careers.</p>
+</section>
+
+<main class="container">
+
+    <!-- AUTOMOTIVE TECHNOLOGY -->
+    <section class="course" id="automotive">
+        <h2>🚗 Automotive Technology</h2>
+        <p>
+            This program develops students' skills in vehicle maintenance,
+            engine servicing, automotive repair, and troubleshooting.
+        </p>
+
+        <h3>Future Career Opportunities</h3>
+        <div class="career-list">
+            <div class="career">🔧 <strong>Automotive Technician</strong></div>
+            <div class="career">🛠️ <strong>Auto Mechanic</strong></div>
+            <div class="career">🚘 <strong>Vehicle Diagnostics Technician</strong></div>
+            <div class="career">🏢 <strong>Automotive Service Advisor</strong></div>
+        </div>
+    </section>
+
+    <!-- WELDING TECHNOLOGY -->
+    <section class="course" id="welding">
+        <h2>🔥 Welding Technology</h2>
+        <p>
+            This program develops practical skills in metal joining,
+            fabrication, welding safety, and structural work.
+        </p>
+
+        <h3>Future Career Opportunities</h3>
+        <div class="career-list">
+            <div class="career">🔥 <strong>Welder</strong></div>
+            <div class="career">⚙️ <strong>Metal Fabricator</strong></div>
+            <div class="career">🏗️ <strong>Structural Welder</strong></div>
+            <div class="career">📋 <strong>Welding Inspector</strong></div>
+        </div>
+    </section>
+
+    <!-- MECHANICAL TECHNOLOGY -->
+    <section class="course" id="mechanical">
+        <h2>⚙️ Mechanical Technology</h2>
+        <p>
+            This program focuses on machine operation, mechanical
+            maintenance, equipment servicing, and technical drawing.
+        </p>
+
+        <h3>Future Career Opportunities</h3>
+        <div class="career-list">
+            <div class="career">⚙️ <strong>Mechanical Technician</strong></div>
+            <div class="career">🏭 <strong>Machine Operator</strong></div>
+            <div class="career">🔩 <strong>Maintenance Technician</strong></div>
+            <div class="career">📐 <strong>CAD Technician</strong></div>
+        </div>
+    </section>
+
+    <!-- ALUMNI SECTION -->
+    <section class="alumni-section" id="alumni">
+        <h2>🎓 Our Alumni, Our Pride</h2>
+        <p>
+            This section is dedicated to graduates of Cluster C.
+            It will showcase their achievements, employment information,
+            and professional experiences after graduation.
+        </p>
+
+        <h3>Alumni Information</h3>
+        <ul>
+            <li>Graduate's Full Name</li>
+            <li>Course or Specialization</li>
+            <li>Year of Graduation</li>
+            <li>Current Company or Workplace</li>
+            <li>Current Job Position</li>
+        </ul>
+
+        <div class="note">
+            <strong>Note:</strong> Alumni records can be added when
+            verified graduate information becomes available.
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <h2>CLUSTER C</h2>
+        <p>Automotive • Welding • Mechanical</p>
+
+        <div class="footer-line"></div>
+
+        <p class="footer-batch">BATCH 2026–2027</p>
+        <p>Skills • Innovation • Excellence</p>
+    </div>
+
+    <div class="footer-bottom">
+        <p>BSIT 3A - CPT</p>
+        <p>© 2026–2027 Cluster C. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
