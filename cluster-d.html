@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cluster D Student Information Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f5f5;
+    color: #292d78;
+}
+
+header {
+    background: linear-gradient(120deg, #a90012, #d71920, #85000b);
+    color: white;
+    padding: 22px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-circle {
+    background: #f7d95b;
+    color: #a90012;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo h1 {
+    font-size: 25px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #f7d95b;
+}
+
+.hero {
+    min-height: 380px;
+    background:
+        linear-gradient(rgba(80,0,0,.72), rgba(80,0,0,.72)),
+        url('images/cosmetology1.jpg') center/cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero .hero-button {
+    display: inline-block;
+    background: #f7d95b;
+    color: #85000b;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+section {
+    padding: 55px 7%;
+    scroll-margin-top: 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: #a90012;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.about-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    line-height: 1.8;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+    text-align: center;
+}
+
+.course-grid,
+.instructor-grid,
+.student-grid,
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.course-card,
+.student-card,
+.instructor-card,
+.alumni-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,.10);
+}
+
+.course-card h3,
+.student-card h3 {
+    color: #a90012;
+    margin-bottom: 12px;
+}
+
+.course-card p,
+.student-card p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.course-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.course-total {
+    background: #a90012;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.student-card {
+    border-top: 5px solid #d71920;
+}
+
+.instructor-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #d71920;
+    margin-bottom: 12px;
+}
+
+.instructor-card h3 {
+    color: #a90012;
+    margin-bottom: 7px;
+}
+
+.alumni-heading {
+    color: #a90012;
+    text-align: center;
+    margin: 35px 0 20px;
+    font-size: 23px;
+}
+
+.alumni-card {
+    padding: 18px;
+    transition: .2s;
+}
+
+.alumni-card:hover {
+    transform: translateY(-4px);
+}
+
+.alumni-card img {
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #d71920;
+    margin-bottom: 12px;
+    background: #eee;
+}
+
+.alumni-card h3 {
+    color: #a90012;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.alumni-card p {
+    color: #444;
+    font-size: 14px;
+    margin: 7px 0;
+    line-height: 1.4;
+}
+
+.alumni-course {
+    background: #f7d95b;
+    color: #85000b;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: linear-gradient(120deg, #a90012, #85000b);
+    color: white;
+    padding: 25px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+@media(max-width: 700px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <div class="logo-circle">CD</div>
+        <div>
+            <h1>Cluster D</h1>
+            <p>Student Information Website</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#students">Student Information</a>
+        <a href="#instructors">Instructors</a>
+        <a href="#alumni">Alumni</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+    <div>
+        <h2>Welcome to Cluster D</h2>
+        <p>Student Information Website</p>
+        <p>Batch 2026–2027</p>
+        <a href="#about" class="hero-button">Explore Website</a>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Cluster D</h2>
+
+    <div class="about-box">
+        <p>
+            Welcome to the Cluster D Student Information Website.
+            This website provides information about the different
+            courses, student population, instructors, and alumni
+            of Cluster D. It aims to organize and present important
+            information in one accessible platform.
+        </p>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+    <h2 class="section-title">Our Courses</h2>
+
+    <div class="course-grid">
+
+        <div class="course-card">
+            <img src="images/cosmetology1.jpg" alt="Cosmetology">
+            <h3>Cosmetology</h3>
+            <p>1st Year: 19</p>
+            <p>2nd Year: 17</p>
+            <p>3rd Year: 13</p>
+            <p>OJT: 1</p>
+            <div class="course-total">Total: 49 Students</div>
+        </div>
+
+        <div class="course-card">
+            <img src="images/cosmetology2.jpg" alt="Garments Technology">
+            <h3>Garments Technology</h3>
+            <p>1st Year: 11</p>
+            <p>2nd Year: 26</p>
+            <p>3rd Year: 7</p>
+            <p>OJT: 5</p>
+            <div class="course-total">Total: 44 Students</div>
+        </div>
+
+        <div class="course-card">
+            <img src="images/foodtechnology.jpg" alt="Food Technology">
+            <h3>Food Technology</h3>
+            <p>1st Year: 37</p>
+            <p>2nd Year: 28</p>
+            <p>3rd Year: 46</p>
+            <p>OJT: 15</p>
+            <div class="course-total">Total: 111 Students</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- STUDENT INFORMATION -->
+<section id="students">
+    <h2 class="section-title">Student Information</h2>
+
+    <div class="student-grid">
+
+        <div class="student-card">
+            <h3>Cosmetology</h3>
+            <p>1st Year: 19</p>
+            <p>2nd Year: 17</p>
+            <p>3rd Year: 13</p>
+            <p>OJT: 1</p>
+            <div class="course-total">Total: 49</div>
+        </div>
+
+        <div class="student-card">
+            <h3>Garments Technology</h3>
+            <p>1st Year: 11</p>
+            <p>2nd Year: 26</p>
+            <p>3rd Year: 7</p>
+            <p>OJT: 5</p>
+            <div class="course-total">Total: 44</div>
+        </div>
+
+        <div class="student-card">
+            <h3>Food Technology</h3>
+            <p>1st Year: 37</p>
+            <p>2nd Year: 28</p>
+            <p>3rd Year: 46</p>
+            <p>OJT: 15</p>
+            <div class="course-total">Total: 111</div>
+        </div>
+
+    </div>
+
+    <div class="about-box" style="margin-top:25px;">
+        <h3>Overall Student Population</h3>
+        <p>1st to 3rd Year Students: <strong>204</strong></p>
+        <p>OJT Students: <strong>21</strong></p>
+        <p><strong>Total Including OJT: 225 Students</strong></p>
+    </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors">
+    <h2 class="section-title">Our Instructors</h2>
+
+    <div class="instructor-grid">
+
+        <div class="instructor-card">
+            <img src="images/adhelyn.jpg" alt="Adhelyn">
+            <h3>Adhelyn</h3>
+            <p>Instructor</p>
+        </div>
+
+        <div class="instructor-card">
+            <img src="images/jay-ar.jpg" alt="Jay-ar">
+            <h3>Jay-ar Y. Inwang</h3>
+            <p>Faculty Member</p>
+        </div>
+
+        <div class="instructor-card">
+            <img src="images/marietta.jpg" alt="Marietta">
+            <h3>Marietta P. Ranjo</h3>
+            <p>INS III</p>
+        </div>
+
+        <div class="instructor-card">
+            <img src="images/herlyn.jpg" alt="Herlyn">
+            <h3>Herlyn</h3>
+            <p>Instructor</p>
+        </div>
+
+        <div class="instructor-card">
+            <img src="images/herminigilda.jpg" alt="Herminigilda">
+            <h3>Herminigilda M. Epic</h3>
+            <p>INS I</p>
+        </div>
+
+        <div class="instructor-card">
+            <img src="images/john.jpg" alt="John">
+            <h3>John Q. Obial</h3>
+            <p>INS I</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ALUMNI -->
+<section id="alumni">
+    <h2 class="section-title">Our Alumni</h2>
+
+    <!-- COSMETOLOGY ALUMNI -->
+    <h3 class="alumni-heading">Cosmetology Alumni</h3>
+
+    <div class="alumni-grid">
+
+        <div class="alumni-card">
+            <img src="images/queen-manhila.jpg" alt="Queen Manhila">
+            <h3>Queen Mantila</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Freelancer – Cruise Ship Hairdresser</p>
+            <p>Year: 2018</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/villa-quintana.jpg" alt="Villa Quintana">
+            <h3>Villa Quintana</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Beauty Provider – Dubai</p>
+            <p>Year: 2020</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/herminigilda-epic.jpg" alt="Herminigilda M. Epic">
+            <h3>Herminigilda M. Epie</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Beauty Care Instructor – NVSU Bambang</p>
+            <p>Year: 2020</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/joel-lee-cortez.jpg" alt="Joel Lee Cortez">
+            <h3>Joei Lee Cortez</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Beauty Provider – Canada</p>
+            <p>Year: 2020</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/queen-leonery-caballes.jpg" alt="Queen Leonery Caballes">
+            <h3>Queen Leonery Caballes</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Teaching – Aclan</p>
+            <p>Year: 2023</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/rose-ann-mabasa.jpg" alt="Rose Ann Mabasa">
+            <h3>Rose Ann Mabasa</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Beauty Provider – Canada</p>
+            <p>Year: 2023</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/jay-ar-inwang.jpg" alt="Jay-Ar Y. Inwang">
+            <h3>Jay-Ar Y. Inway</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Beauty Care Instructor – NVSU Bambang</p>
+            <p>Year: 2023</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/agnes-alcantara.jpg" alt="Agnes Alcantara">
+            <h3>Agnes Alcantara</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Freelancer</p>
+            <p>Year: 2023</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/khey-gie-antonio.jpg" alt="Khey-Gie Antonio">
+            <h3>Khey-Cie Antonio</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Freelancer</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/shahara-nikah-dela-cruz.jpg" alt="Shahara Nikah Dela Cruz">
+            <h3>Shahara Nikah Dela Cruz</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Beauty Provider – Salon Bambang</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/krischelle-ann-batag.jpg" alt="Krischelle Ann Batag">
+            <h3>Krishelle Ann Batag</h3>
+            <span class="alumni-course">Cosmetology</span>
+            <p>Occupation: Freelancer</p>
+            <p>Year: 2025</p>
+        </div>
+
+    </div>
+
+    <!-- GARMENTS ALUMNI -->
+    <h3 class="alumni-heading">Garments Technology Alumni</h3>
+
+    <div class="alumni-grid">
+
+        <div class="alumni-card">
+            <img src="images/mylene-inociaan.jpg" alt="Mylene Inociaan">
+            <h3>Mylene Inociaan</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation: Sewer DSR garments</p>
+            <p>Year: Not specified</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/sheena-lakias.jpg" alt="Sheena Lakias">
+            <h3>Sheena Lakias</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation: Quality Control DSR garments</p>
+            <p>Year:2018</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/saturlyn-aquillis.jpg" alt="Saturlyn Aquillis">
+            <h3>Saterlyn Aquillio</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation: Quality Control DSR garments</p>
+            <p>Year: 2018</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/fregielyn-natividad.jpg" alt="Fregielyn Natividad">
+            <h3>Fregielyn Natividad</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation:Sewer Maurel's</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/angeline-sagabaren.jpg" alt="Angeline Sagabaren">
+            <h3>Angeline Sagabaen</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation:Sewer</p>
+            <p>Year:2018</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/joy-bitunag.jpg" alt="Joy Bitunag">
+            <h3>Joy Bitunag</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation: Sewer</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/pao-lict uo.jpg" alt="Pao Lictuo">
+            <h3>Pao Lictao</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation: Designer</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/gwen-gabriel.jpg" alt="Gwen Gabriel">
+            <h3>Gian Gabriel</h3>
+            <span class="alumni-course">Garments Technology</span>
+            <p>Occupation: Designer</p>
+            <p>Year:2018</p>
+        </div>
+
+    </div>
+
+    <!-- FOOD TECHNOLOGY ALUMNI -->
+    <h3 class="alumni-heading">Food Technology Alumni</h3>
+
+    <div class="alumni-grid">
+
+        <div class="alumni-card">
+            <img src="images/cris.jpg" alt="Cris D. Dela Torre">
+            <h3>Cris D. Dela Torre</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Cook</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/art.jpg" alt="Art Nveriz Sinaban">
+            <h3>Art Nueriz Sinaban</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Barista</p>
+            <p>Year: 2022</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/arjan.jpg" alt="Arjan Calla">
+            <h3>Arian Calla</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Cook</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/jeanelle.jpg" alt="Jeanelle Pinca">
+            <h3>Jeanelle Pinca</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Sales Manager</p>
+            <p>Year: 2022</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/flory-ann.jpg" alt="Flory Ann Bascos">
+            <h3>Flory Ann Bascos</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Service Crew</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/marilyn.jpg" alt="Marilyn Martinez">
+            <h3>Marilyn Martinez</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Business Owner</p>
+            <p>Year: 2022</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/darlene.jpg" alt="Darlene Bugnay">
+            <h3>Darlene Bugnay</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Service Crew</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/john-paul.jpg" alt="John Paul Samiento">
+            <h3>John Paul Samiento</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Cook</p>
+            <p>Year: 2025</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/mong.jpg" alt="Mong M. Caser">
+            <h3>Mong M. Caser</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Cashier</p>
+            <p>Year: 2023</p>
+        </div>
+
+        <div class="alumni-card">
+            <img src="images/mary-jane.jpg" alt="Mary Jane Abalos">
+            <h3>Mary Jane Abalos</h3>
+            <span class="alumni-course">Food Technology</span>
+            <p>Occupation: Cashier</p>
+            <p>Year: 2025</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Cluster D Student Information Website</h3>
+    <p>BSIT 3A - CPT</p>
+    <p>Batch 2026–2027</p>
+    <p>© 2026 Cluster D. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
