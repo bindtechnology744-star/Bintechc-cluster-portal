@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)file:///C:/Users/Lenovo/Downloads/cluster_A_with_alumni.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+  .gallery img {
+    border: 4px solid #FFC107;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+</style>
+
+<style>
+  .instructor-photo {
+    border: 3px solid #FFC107 !important;
+  }
+</style>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cluster A | Student Information</title>
+
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+    color: #292d78;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #a90012, #d71920, #85000b);
+    color: white;
+    padding: 20px 6%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    border: 3px solid #f7d95b;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b5121b;
+    font-weight: bold;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    font-size: 14px;
+    color: #fff0f0;
+}
+
+nav {
+    background: #20212b;
+    padding: 12px 4%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #b5121b;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #ffffff, #fff0f0);
+    border-bottom: 5px solid #f7d95b;
+}
+
+.hero h2 {
+    color: #b5121b;
+    font-size: clamp(29px, 5vw, 43px);
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #555;
+    font-size: 17px;
+}
+
+.batch-badge {
+    display: inline-block;
+    background: #f7d95b;
+    color: #292d78;
+    padding: 9px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 45px 6%;
+    scroll-margin-top: 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: #b5121b;
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.section-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 28px;
+}
+
+.about-box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    border-left: 5px solid #f7d95b;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px #0000000d;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.course-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 5px solid #b5121b;
+    box-shadow: 0 5px 15px #00000010;
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+}
+
+.course-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.course-card h3 {
+    color: #b5121b;
+    margin-bottom: 8px;
+}
+
+.course-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.course-heading {
+    color: #b5121b;
+    text-align: center;
+    margin: 32px 0 18px;
+    font-size: 22px;
+    padding-bottom: 7px;
+    border-bottom: 3px solid #f7d95b;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.student-card {
+    background: white;
+    padding: 18px 8px;
+    text-align: center;
+    border-radius: 10px;
+    border-bottom: 4px solid #f7d95b;
+    box-shadow: 0 4px 12px #0000000d;
+}
+
+.student-card h4 {
+    color: #292d78;
+    font-size: 14px;
+}
+
+.student-number {
+    color: #b5121b;
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.total-label {
+    color: #666;
+    font-size: 12px;
+}
+
+.section-count {
+    color: #555;
+    font-size: 12px;
+}
+
+.course-total {
+    text-align: center;
+    background: white;
+    border-left: 4px solid #f7d95b;
+    border-radius: 6px;
+    padding: 14px;
+    margin: 18px auto 30px;
+    max-width: 650px;
+    color: #292d78;
+    box-shadow: 0 3px 10px #0000000d;
+}
+
+.course-total strong {
+    color: #b5121b;
+}
+
+.cluster-summary {
+    margin: 35px auto 0;
+    max-width: 650px;
+    background: linear-gradient(135deg, #a90012, #d71920);
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    border-radius: 14px;
+    border-bottom: 5px solid #f7d95b;
+}
+
+.cluster-summary h3 {
+    font-size: 22px;
+}
+
+.summary-number {
+    color: #f7d95b;
+    font-size: 38px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.cluster-summary p {
+    margin-bottom: 10px;
+}
+
+.summary-line {
+    height: 1px;
+    background: #ffffff55;
+    max-width: 250px;
+    margin: 15px auto;
+}
+
+.instructor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+    max-width: 1050px;
+    margin: 0 auto 25px;
+}
+
+.instructor-card {
+    background: white;
+    border: 1px solid #eee;
+    border-top: 5px solid #b5121b;
+    border-radius: 10px;
+    padding: 25px 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px #0000000d;
+}
+
+.instructor-avatar {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #fff0f0;
+    border: 2px solid #f7d95b;
+    color: #b5121b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.alumni-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #f4d03f; /* Dilaw na bilog */
+    margin: 0 auto 10px auto;
+    overflow: hidden; /* Ito ang magpuputol sa sobrang bahagi ng larawan para manatiling bilog */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: #a93226;
+}
+.alumni-card img,
+.profile-img {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto 10px auto !important;
+    border: 2px solid #f4d03f !important;
+}
+
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pinapanatili ang tamang proporsyon ng mukha nang hindi na-i-stretch */
+    display: block;
+}
+
+.instructor-card h4 {
+    color: #292d78;
+    font-size: 15px;
+}
+
+.instructor-card p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+footer {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #a90012, #d71920, #85000b);
+    color: white;
+    text-align: center;
+}
+
+.footer-content {
+    padding: 30px 15px;
+}
+
+.footer-content h2 {
+    letter-spacing: 3px;
+}
+
+.footer-line {
+    width: 90px;
+    height: 4px;
+    background: #f7d95b;
+    border-radius: 5px;
+    margin: 17px auto;
+}
+
+.footer-batch {
+    color: #f7d95b;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 12px 0;
+}
+
+.footer-bottom {
+    background: #20212b;
+    padding: 15px;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 21px;
+    }
+
+    .student-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    section {
+        padding: 32px 5%;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .batch-badge {
+        font-size: 13px;
+    }
+}
+.logo { overflow: hidden; }
+.logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+</style>
+
+<style>
+.alumni-section { padding: 45px 6%; background: #fffafa; }
+.alumni-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:18px; max-width:1200px; margin:25px auto 35px; }
+.alumni-card { background:white; border-radius:12px; padding:18px 14px; text-align:center; border-top:5px solid #b5121b; border-bottom:3px solid #f7d95b; box-shadow:0 4px 12px #00000010; }
+.alumni-photo { width:105px; height:105px; margin:0 auto 12px; border-radius:50%; border:3px solid #f7d95b; background:#fff0f0; color:#b5121b; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; overflow:hidden; }
+.alumni-photo img { width:100%; height:100%; object-fit:cover; }
+.alumni-card h4 { color:#292d78; font-size:15px; margin-bottom:5px; }
+.alumni-card p { color:#666; font-size:13px; margin:3px 0; }
+.alumni-note { max-width:900px; margin:0 auto 20px; padding:12px 16px; text-align:center; background:#fff4d6; border-left:4px solid #f7d95b; border-radius:6px; color:#555; font-size:13px; }
+@media (max-width:600px) { .alumni-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-content">
+        <div class="logo">
+    <img src="image/1.jpg" alt="NVSU Logo">
+</div>
+        <div class="header-text">
+            <h1>CLUSTER A</h1>
+            <p>Drafting • Computer Techology/Bindtech • </p>
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="file:///C:/Users/Lenovo/Downloads/cluster_A_with_alumni.html#home">Home</a>
+    <a href="file:///C:/Users/Lenovo/Downloads/cluster_A_with_alumni.html#about">About</a>
+    <a href="file:///C:/Users/Lenovo/Downloads/cluster_A_with_alumni.html#courses">Courses</a>
+    <a href="file:///C:/Users/Lenovo/Downloads/cluster_A_with_alumni.html#students">Student Information</a>
+    <a href="file:///C:/Users/Lenovo/Downloads/cluster_A_with_alumni.html#instructors">Instructors</a>
+    <a href="file:///C:/Users/Lenovo/Downloads/cluster_A_with_alumni.html#alumni">Alumni</a>
+</nav>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <h2>Welcome to Cluster A</h2>
+    <p>Technology, Skills and Innovation</p>
+    <div class="batch-badge">BATCH 2026–2027</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Cluster A</h2>
+    <p class="section-description">Learn more about our cluster</p>
+
+    <div class="about-box">
+        <p>
+            Cluster A features two technical courses:
+            Computer Technology, Architectural Drafting Technology,
+			This website presents course
+            information, student totals by year level, and faculty
+            information in one convenient place.
+        </p>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+    <h2 class="section-title">Our Courses</h2>
+    <p class="section-description">
+        Explore the courses offered under Cluster A.
+    </p>
+
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-icon">📐</div>
+            <h3>Drafting</h3>
+            <p>Drafting services for technical  drawing,plans,and designs.</p>
+        </div>
+
+        <div class="course-card">
+            <div class="course-icon">🖥</div>
+            <h3>Computer Technology</h3>
+            <p>Computer Technology services for installation,maintenance,Programing.</p>
+    </div>
+</div></section>
+<!-- DRAFTING -->
+    <div class="course-section">
+        <div class="course-heading">
+            <h3>📐DRAFTING LABORATORY</h3>
+            <p>is a specialized workspace or academic facility where students, drafman, and architects create, test,</p>
+			 <p>and refine technical drawings, blueprints, and digital models.</p>
+        </div>
+            <div class="gallery">
+<div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 25px;">
+  <div style="width: 40%; text-align: center;">
+    <p>DRAFTING DRAWING LAB</p>
+    <img src="image/lab1.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+  <div style="width: 40%; text-align: center;">
+    <p>DRAFTING PAINT LAB</p>
+    <img src="image/lab2.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+</div>
+<div style="display: flex; justify-content: center; gap: 25px;">
+  <div style="width: 40%; text-align: center;">
+    <p>DRAFTING COMPUTER LAB1</p>
+    <img src="image/u.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+  <div style="width: 40%; text-align: center;">
+    <p>DRAFTING COMPUTER LAB2</p>
+    <img src="image/a.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+</div>
+
+	<div class="course-section">
+        <div class="course-heading">
+            <h3>DRAFTING EQUIPMENT</h3>
+            <p>the physical tools, instruments, surfaces, and materials used to create precise technical drawings, blueprints, and architectural.</p>
+			</div>
+			 <div class="gallery">
+    <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 25px;">
+	<div style="width: 40%; text-align: center;">
+	 <p>MULTI-PURPOSE DRAWING TABLE</p>
+    <img src="image/c.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+ </div>
+  <div style="width: 40%; text-align: center;">
+    <p>DRAFTING PAINT MATERIALS</p>
+    <img src="image/d.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+   </div>
+  <div style="display: flex; justify-content: center; gap: 25px;">
+  <div style="width: 40%; text-align: center;">
+    <p>GRAPHIC ARTS</p>
+    <img src="image/g.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+  <div style="width: 40%; text-align: center;">
+    <p>DRAFTING HIT PRESS</p>
+    <img src="image/j.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+   </div>
+   <div style="display: flex; justify-content: center; gap: 25px;">
+  <div style="width: 40%; text-align: center;">
+    <p>MUG PRESS</p>
+    <img src="image/i.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+  <div style="width: 40%; text-align: center;">
+    <p>DRAFTING DRAWING MATERIALS</p>
+    <img src="image/o.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+   </div>
+
+	<!-- COMPUTER TECHNOLOGY -->
+    <div class="course-section">
+        <div class="course-heading">
+            <h3>02. COMPUTER TECHNOLOGY</h3>
+            <p>Computer Technology services for installation,maintenance,Programing.</p>
+        </div>
+<div class="gallery">
+    <div style="display: flex; justify-content: center; gap: 25px; margin-bottom: 25px;">
+	<div style="width: 40%; text-align: center;">
+	 <p>COMPUTER LAB1</p>
+    <img src="image/f.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+ </div>
+  <div style="width: 40%; text-align: center;">
+    <p>COMPUTER LAB2</p>
+    <img src="image/x.jpg" style="width: 100%; height: 280px; object-fit: cover; border: 3px solid orange; border-radius: 10px;">
+  </div>
+   </div>
+        &lt;<div style="width: 95%; margin: 20px auto; text-align: center;">
+    <img src="image/zz.jpg" style="max-width: 100%; height: auto; border: 5px solid orange; border-radius: 10px;">
+</div>
+
+<!-- STUDENT INFORMATION -->
+<section id="students">
+    <h2 class="section-title">Student Information</h2>
+    <p class="section-description">
+        Student totals by year level and faculty members.
+    </p>
+
+    <!--DRAFTING -->
+    <h3 class="course-heading">Drafting Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">28</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">18</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">21</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">7</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>74</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>6</strong>
+    </p>
+
+    <!-- COMPUTER TECHNOLOGY -->
+    <h3 class="course-heading">Computer Technology</h3>
+    <div class="student-grid">
+        <div class="student-card">
+            <h4>First Year</h4>
+            <div class="student-number">42</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Second Year</h4>
+            <div class="student-number">24</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Third Year</h4>
+            <div class="student-number">22</div>
+            <p class="total-label">Students</p>
+        </div>
+        <div class="student-card">
+            <h4>Fourth Year</h4>
+            <div class="student-number">18</div>
+            <p class="total-label">Students</p>
+        </div>
+    </div>
+    <p class="course-total">
+        Total Students: <strong>106</strong>
+        &nbsp; | &nbsp;
+        Faculty Members: <strong>4</strong>
+    </p>
+
+    <!-- OVERALL SUMMARY -->
+    <div class="cluster-summary">
+        <h3>Cluster A Overall Summary</h3>
+
+        <div class="summary-number">180</div>
+        <p>Total Students</p>
+
+        <div class="summary-line"></div>
+
+        <div class="summary-number">10</div>
+        <p>Total Faculty Members</p>
+    </div>
+</section>
+
+<!-- INSTRUCTORS -->
+<section id="instructors">
+    <h2 class="section-title">Our Instructors</h2>
+    <p class="section-description">
+        Instructor names and photos can be updated here.
+    </p>
+
+    <h3 class="course-heading">Drafting Technology</h3>
+    <div class="instructor-grid">
+	<div class="instructor-card">
+     <img src="image/Warren.jpg" alt="Warren M. Acosta" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+		 <h4>Warren M. Acosta.</h4>
+            <p>Drafting Technology</p>
+        </div>
+    <div class="instructor-card">
+     <img src="image/caysie.jpg" alt="Caysie K Ngaloy" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">		
+            <h4>Caysie K. Ngaloy </h4>
+            <p>Drafting Technology</p>
+        </div>
+		
+		<div class="instructor-card">
+     <img src="image/jomar.jpg" alt="Jomar B. Esteban" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+            <h4>Jomar B. Esteban.</h4>
+            <p>Drafting Technology</p>
+        </div>
+		<div class="instructor-card">
+     <img src="image/ranjo.jpg" alt="Mark Edison M. Padua" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+        <h4>Deomedes S. Ranjo Jr.</h4>
+        <p>Drafting Technology</p>
+        </div>
+		<div class="instructor-card">
+    <img src="image/perez.jpg" alt="Gerald L. Perez" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+         <h4>Gerald L. Perez</h4>
+         <p>Drafting Technology</p>
+</div>
+		<div class="instructor-card">
+    <img src="image/padua.jpg" alt="Mark Edison M. Padua" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+         <h4>Mark Edison M. Padua</h4>
+         <p>Drafting Technology</p>
+        </div>
+	 </div>
+    
+     
+    <h3 class="course-heading">Computer Technology</h3>
+    <div class="instructor-grid">
+        <div class="instructor-card">
+    <img src="image/Hans.jpg"
+         alt="Hans C Bangyad"
+         class="instructor-photo"
+         width="70"
+         height="70"
+         style="object-fit: cover; border-radius: 50%;">
+            <h4>Hans C. Bangyad </h4>
+            <p>Computer Technology</p>
+        </div>
+		<div class="instructor-card">
+    <img src="image/kevin.jpg" alt="Mark Kevin V. Rimando" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+            <h4>Mark kevin V. Rimando</h4>
+            <p>Computer Technology</p>
+        </div>
+		<div class="instructor-card">
+	<img src="image/Vince.jpg" alt="Vince Lloyd Q. Balisi" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+            <h4>Vince LLoyd Q. Balisi</h4>
+            <p>Computer Technology</p>
+        </div>
+		<div class="instructor-card">
+    <img src="image/arnel.jpg" alt="Arnel A. Agustin" class="instructor-photo" width="70" height="70" style="object-fit: cover; border-radius: 50%;">
+            <h4>Arnel A. Agustin</h4>
+            <p>Computer Technology</p>
+			 </div>
+		
+
+</div></section>
+
+
+<!-- ALUMNI DIRECTORY -->
+<section id="alumni" class="alumni-section">
+    <h2 class="section-title">Our Alumni</h2>
+    <p class="section-description">Meet the graduates of Cluster A.</p>
+    <div class="alumni-note">At Nueva Vizcaya State University (NVSU), alumni are graduates and former students from  Bambang campuses who stay connected to support
+	the university's goals and foster camaraderie through the NVSU Federated Alumni Association, Inc.</div>
+    <h3 class="course-heading">📐 Drafting Technology Alumni</h3>
+    <div class="alumni-grid">
+        <div class="alumni-card">
+            
+			<img src="image/clay.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Cleonery P. tuliao</h4>
+            <p><strong>Artist,Printing Machine</strong></p>
+            <p>Norris Printing Shop</p>
+            <p>Graduated: 2022</p>
+            <p>Drafting Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/isa.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Aiza P. Balanban</h4>
+            <p><strong>Computer-Aided DesignCorbitcad</strong></p>
+            <p>Corbitcad</p>
+            <p>Graduated: 2018</p>
+            <p>Drafting Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/john.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>John Rusley D. Umali</h4>
+            <p><strong>Staff Members</strong></p>
+            <p>RAJ Technology</p>
+            <p>Graduated: 2018</p>
+            <p>Drafting Technology</p>
+        </div>
+<div class="alumni-card">
+           
+			<img src="image/rj.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Rhay John B. Abellanes</h4>
+            <p><strong>CAD Operator</strong></p>
+            <p>Northline Engineering</p>
+            <p>Graduated: 2018</p>
+            <p>Drafting Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/jem.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Gemma C Bautista</h4>
+            <p><strong>Building Plans Assistant</strong></p>
+            <p>UrbanWorks Design</p>
+            <p>Graduated: 2019</p>
+            <p>Drafting Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/jef.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Jeffrey B. Angopan</h4>
+            <p><strong>Site Documentation Assistant</strong></p>
+            <p>PrimeBuild Construction</p>
+            <p>Graduated: 2018</p>
+            <p>Drafting Technology</p>
+        </div>
+<div class="alumni-card">
+          
+			<img src="image/james.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>James C. Dinamling</h4>
+            <p><strong>3D Modeling Assistant</strong></p>
+            <p>Vertex Design Studio</p>
+            <p>Graduated: 2018</p>
+            <p>Drafting Technology</p>
+        </div>
+
+    </div>
+    <h3 class="course-heading">🖥 Computer Technology Alumni</h3>
+    <div class="alumni-grid">
+        <div class="alumni-card">
+            
+			<img src="image/moi.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Moises Palabay</h4>
+            <p><strong>Computer Systems Technician</strong></p>
+            <p>TechTrend Cadgets center</p>
+            <p>Graduated: 2023</p>
+            <p>Computer Technology</p>
+        </div>
+<div class="alumni-card">
+       
+			 <img src="image/losi.jpg" alt="Maria Luisa S. Manaois" class="profile-img">
+            <h4>Maria Luisa S. Manaois</h4>
+            <p><strong>IT Support Specialist</strong></p>
+            <p>DJV IT SOLUTION</p>
+            <p>Graduated: 2018</p>
+            <p>Computer Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/jes.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Jessie N Bumilao</h4>
+            <p><strong>Computer Technician</strong></p>
+            <p>PC Hub Services</p>
+            <p>Graduated: 2018</p>
+            <p>Computer Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/von.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Von Mark H. Crisostomo</h4>
+            <p><strong>Computer Technician</strong></p>
+            <p>ConnectPoint Networks</p>
+            <p>Graduated: 2023</p>
+            <p>Computer Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/may.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Myla C. Morales</h4>
+            <p><strong>Computer Repair Technician</strong></p>
+            <p>DigitalFix Center</p>
+            <p>Graduated: 2020</p>
+            <p>Computer Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/jord.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>George Riel V. Fabian Jr.</h4>
+            <p><strong>CNC Operator</strong></p>
+            <p>Cathay Studio</p>
+            <p>Graduated: 2026</p>
+            <p>Computer Technology</p>
+        </div>
+<div class="alumni-card">
+            
+			<img src="image/dom.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Dominador Carnate Jr</h4>
+            <p><strong>CNC Operator</strong></p>
+            <p>Cathay Studio</p>
+            <p>Graduated: 2026</p>
+            <p>Computer Technology</p>
+        </div>
+<div class="alumni-card">
+           
+			<img src="image/gera.jpg" alt="Aiza P. Balanban" style="width: 100%; height: 100%; object-fit: cover;">
+            <h4>Gerald T. Matias</h4>
+            <p><strong>IT Operations Assistant</strong></p>
+            <p>CloudBridge Solutions</p>
+            <p>Graduated: 2018</p>
+            <p>Computer Technology</p>
+        </div>
+
+    </div>
+</section>
+
+</div></div></div></div></div></div></main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <h2>CLUSTER A</h2>
+        <p>Drafting•Computer Technology/bindtech •</p>
+
+        <div class="footer-line"></div>
+
+        <p class="footer-batch">BATCH 2026–2027</p>
+        <p>Skills • Innovation • Excellence</p>
+    </div>
+
+    <div class="footer-bottom">
+        <p>BSIT 3A - CPT</p>
+        <p>© 2026–2027 Cluster A. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+</body></html>
